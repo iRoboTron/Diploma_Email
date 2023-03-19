@@ -9,14 +9,12 @@ from src import email_sender
 
 email = "iadelfos@gmail.com"
 
-subject = "Конкурс Пятиминутка"
+subject = "Спасибо за программу!"
 
-body = """Здравствуйте, %s! 
-Приглашаем Вас поучаствовать в нашем конкурсе.
-Подробности: https://www.youtube.com/c/RoboTron_Channel
-Ждем Ваших работ!
+body = """Здравствуйте, команда RoboTron! 
+Это наше первое письмо отправленное через Вашу прогрмму :)
 ---------------
-C уважением команда RoboTron
+C уважением!
 """
 
 email_sender.send_email(email, subject, body)
