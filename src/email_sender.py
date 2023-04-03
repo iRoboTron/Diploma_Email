@@ -1,3 +1,10 @@
+"""
+Postcardware License
+Copyright (c) 2023 RoboTron
+Email: iAdelfos@gmail.com
+https://www.youtube.com/@RoboTron_Channel/
+"""
+
 import mimetypes
 import os
 import settings
@@ -10,8 +17,23 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+def send_email(email_to: str, subject: str, body: str, fpath: str = None):
+    """
+    Функция для отправки письма.
 
-def send_email(email_to, subject, body, fpath=None):
+    :param email_to: адрес получателя
+    :param subject: тема письма
+    :param body: тело письма
+    :param fpath: (опциональный) путь к файлу или папке с файлами, которые нужно прикрепить к письму
+    :return: None
+
+    Examples:
+        >>> from src import email_sender
+        >>> email_sender.send_email("my@email.com", "Тема письма", "Текст письма")
+        Ok
+        >>> email_sender.send_email("my@email.com", "Документы", "Забыл прислать:)", "/docs/file.docx")
+        Ok
+    """
     msg = MIMEMultipart()
     msg['From'] = settings.EMAIL_FROM
     msg['To'] = email_to
